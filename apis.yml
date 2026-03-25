@@ -1,0 +1,38 @@
+aid: cerbos
+name: Cerbos
+description: >-
+  Cerbos is an open source authorization layer that decouples access control from application code using policy-as-code for fine-grained API authorization.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Authentication
+  - Authorization
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/cerbos/refs/heads/main/apis.yml
+created: '2026-03-25'
+modified: '2026-03-25'
+specificationVersion: '0.19'
+apis:
+  - aid: cerbos:cerbos
+    name: Cerbos
+    description: >-
+      Cerbos is an open source authorization layer that decouples access control from application code using policy-as-code for fine-grained API authorization.
+    humanURL: https://www.cerbos.dev
+    tags:
+      - Authentication
+      - Authorization
+    properties:
+      - type: Documentation
+        url: https://docs.cerbos.dev
+      - type: GitHub Repository
+        url: https://github.com/cerbos/cerbos
+common:
+  - type: Website
+    url: https://www.cerbos.dev
+  - type: Documentation
+    url: https://docs.cerbos.dev
+  - type: GitHub Organization
+    url: https://github.com/cerbos/cerbos
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
