@@ -1,0 +1,13 @@
+{
+  "repo": "cerbos",
+  "feeds": [
+    {
+      "source": "https://www.cerbos.dev/blog",
+      "feed_url": "https://www.cerbos.dev/rss",
+      "saved": 10,
+      "title": "Cerbos - All Posts"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:25:11Z"
+}
