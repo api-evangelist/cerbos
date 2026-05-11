@@ -265,6 +265,20 @@ common:
       - name: Python SDK
       - name: Ruby SDK
       - name: Rust SDK
+  - type: Integrations
+    url: https://www.cerbos.dev/ecosystem
+integrations:
+  - name: Cerbos
+  - name: /assets/footer/socials/x.svg
+  - name: /assets/footer/socials/github.svg
+  - name: /assets/footer/socials/mail.svg
+  - name: /assets/footer/socials/youtube.svg
+  - name: /assets/footer/socials/linkedin.svg
+  - name: /assets/footer/socials/slack.svg
+  - name: /assets/footer/socials/npm.svg
+  - name: /assets/footer/socials/rss.svg
+  - name: /assets/footer/compliance/soc-2.svg
+  - name: /assets/footer/compliance/gdpr.svg
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
