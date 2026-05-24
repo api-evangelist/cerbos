@@ -270,6 +270,8 @@ common:
   - name: Agent Skills
     url: https://github.com/cerbos/skills
     type: AgentSkill
+  - type: LLMsTxt
+    url: https://docs.cerbos.dev/llms.txt
 integrations:
   - name: Cerbos
   - name: /assets/footer/socials/x.svg
