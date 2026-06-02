@@ -2,12 +2,17 @@
   "repo": "cerbos",
   "feeds": [
     {
-      "source": "https://www.cerbos.dev/blog",
-      "feed_url": "https://www.cerbos.dev/rss/",
-      "title": "Cerbos - All Posts",
-      "saved": 40
+      "source": "https://www.cerbos.dev/rss/",
+      "error": "HTTPError"
+    },
+    {
+      "source": "https://github.com/cerbos/cerbos/releases",
+      "feed_url": "https://github.com/cerbos/cerbos/releases.atom",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
     }
   ],
   "post_count": 53,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
