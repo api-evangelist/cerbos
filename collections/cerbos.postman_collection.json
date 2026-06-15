@@ -1,0 +1,2328 @@
+{
+  "item": [
+    {
+      "id": "0e6759ae-9db9-48ac-802d-0fb9df94741e",
+      "name": "Check",
+      "description": {
+        "content": "Evaluate authorization decisions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d56536f-4b50-4f32-aafb-b185d061d025",
+          "name": "Check resources",
+          "request": {
+            "name": "Check resources",
+            "description": {
+              "content": "Evaluate authorization for a principal against one or more resources and actions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "check",
+                "resources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"principal\": {\n    \"id\": \"<string>\",\n    \"roles\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"resources\": [\n    {\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"resource\": {\n        \"kind\": \"<string>\",\n        \"id\": \"<string>\",\n        \"policyVersion\": \"<string>\",\n        \"scope\": \"<string>\",\n        \"attr\": {\n          \"key_0\": 9906,\n          \"key_1\": true,\n          \"key_2\": 7865\n        }\n      }\n    },\n    {\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"resource\": {\n        \"kind\": \"<string>\",\n        \"id\": \"<string>\",\n        \"policyVersion\": \"<string>\",\n        \"scope\": \"<string>\",\n        \"attr\": {\n          \"key_0\": \"string\",\n          \"key_1\": 660.6511361368273\n        }\n      }\n    }\n  ],\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1c0e342b-eb67-4ee8-b3e1-babac3b34e53",
+              "name": "Authorization decisions per resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "check",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": 1289.2345161883557\n    }\n  },\n  \"resources\": [\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": false,\n          \"key_1\": true\n        }\n      }\n    },\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": 5721.378451353002,\n          \"key_1\": 8288\n        }\n      }\n    }\n  ],\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requestId\": \"string\",\n  \"results\": [\n    {\n      \"resource\": {\n        \"id\": \"string\",\n        \"kind\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\"\n      },\n      \"actions\": {\n        \"key_0\": \"EFFECT_NO_MATCH\",\n        \"key_1\": \"EFFECT_DENY\",\n        \"key_2\": \"EFFECT_NO_MATCH\"\n      }\n    },\n    {\n      \"resource\": {\n        \"id\": \"string\",\n        \"kind\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\"\n      },\n      \"actions\": {\n        \"key_0\": \"EFFECT_NO_MATCH\",\n        \"key_1\": \"EFFECT_NO_MATCH\"\n      }\n    }\n  ],\n  \"cerbosCallId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5aa40a9-6250-4da7-914c-43498f104c48",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "check",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": 1289.2345161883557\n    }\n  },\n  \"resources\": [\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": false,\n          \"key_1\": true\n        }\n      }\n    },\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": 5721.378451353002,\n          \"key_1\": 8288\n        }\n      }\n    }\n  ],\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 9982,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1967d33b-efd9-43b7-a6f4-1dc6028a2c3d",
+      "name": "Plan",
+      "description": {
+        "content": "Generate query plans for resource filtering.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9225c83-4c54-49c3-97b4-ec6382f2e515",
+          "name": "Plan resources",
+          "request": {
+            "name": "Plan resources",
+            "description": {
+              "content": "Returns a query plan describing the conditions under which a principal may perform an action on resources matching a kind.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "plan",
+                "resources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"principal\": {\n    \"id\": \"<string>\",\n    \"roles\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  },\n  \"resource\": {\n    \"kind\": \"<string>\",\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": \"<object>\"\n  },\n  \"action\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d236b100-f3f8-4381-b16a-4d112a12b105",
+              "name": "Query plan response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "plan",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": 6645.333244207941,\n      \"key_1\": 5989,\n      \"key_2\": 1028\n    }\n  },\n  \"resource\": {\n    \"kind\": \"<string>\",\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": \"<object>\"\n  },\n  \"action\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requestId\": \"string\",\n  \"action\": \"string\",\n  \"resourceKind\": \"string\",\n  \"policyVersion\": \"string\",\n  \"filter\": {\n    \"kind\": \"KIND_ALWAYS_ALLOWED\",\n    \"condition\": {}\n  },\n  \"cerbosCallId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85858abf-460e-45cf-a0b1-06cb31c8042f",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "plan",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": 6645.333244207941,\n      \"key_1\": 5989,\n      \"key_2\": 1028\n    }\n  },\n  \"resource\": {\n    \"kind\": \"<string>\",\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": \"<object>\"\n  },\n  \"action\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 389,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "124cb8c9-3674-4696-af7a-87238ae7efad",
+      "name": "Server",
+      "description": {
+        "content": "PDP server metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bc9bfd6e-bf54-41b5-a670-d8ac7db066aa",
+          "name": "Server information",
+          "request": {
+            "name": "Server information",
+            "description": {
+              "content": "Returns Cerbos PDP version, commit hash, and build date.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "server_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a989fe72-320d-49b9-8067-e2647ad0415d",
+              "name": "Server metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server_info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\",\n  \"commit\": \"string\",\n  \"buildDate\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d8b2506-66c7-45a4-8d11-f89f92476dc6",
+          "name": "OpenAPI specification",
+          "request": {
+            "name": "OpenAPI specification",
+            "description": {
+              "content": "Returns the OpenAPI/Swagger specification served by the PDP.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schema",
+                "swagger.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2988b0be-8b40-4a4c-a751-831d46a98c0f",
+              "name": "OpenAPI document.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schema",
+                    "swagger.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6341a356-a303-4b4e-9378-a3a20bbc62c4",
+      "name": "AuthZEN",
+      "description": {
+        "content": "OpenID AuthZEN standards-compliant evaluation endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "424d2587-5871-4225-a0a1-4dc071f2df13",
+          "name": "AuthZEN discovery",
+          "request": {
+            "name": "AuthZEN discovery",
+            "description": {
+              "content": "OpenID AuthZEN configuration discovery document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ".well-known",
+                "authzen-configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a4238a6-7904-419a-bf62-01c64ce59e45",
+              "name": "AuthZEN configuration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ".well-known",
+                    "authzen-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0257f057-6a9e-4a05-8e1b-a058a09c0f5d",
+          "name": "AuthZEN single evaluation",
+          "request": {
+            "name": "AuthZEN single evaluation",
+            "description": {
+              "content": "Single access evaluation request per OpenID AuthZEN.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "evaluation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9dbd5eb2-9aaa-456d-a447-e0d89ae29aca",
+              "name": "AuthZEN evaluation decision.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"subject\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"decision\": true,\n  \"context\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5449d71-a0e4-46f1-a0c0-fdcb35ffd865",
+          "name": "AuthZEN batch evaluations",
+          "request": {
+            "name": "AuthZEN batch evaluations",
+            "description": {
+              "content": "Batch access evaluations per OpenID AuthZEN.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "evaluations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9d04d3da-5c17-4020-8c5b-5739884b659d",
+              "name": "Batch evaluation decisions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1a3e6051-c2cb-4519-a298-0f79a4806b5d",
+      "name": "Admin Policies",
+      "description": {
+        "content": "Policy management (Admin API).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "326a7062-e01f-4faf-8c15-e707c36fb0d0",
+          "name": "Add or update policies",
+          "request": {
+            "name": "Add or update policies",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "12c29e95-4c20-4ce3-86a5-e17d4f73a60a",
+              "name": "Policy added/updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea337528-0f37-4590-b55e-393e86a5b45a",
+          "name": "Add or update policies (PUT)",
+          "request": {
+            "name": "Add or update policies (PUT)",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1c458892-0f9a-42d4-b0d2-f48e9c86b280",
+              "name": "Policy added/updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1187cf51-e4d5-4db1-8cac-4963f74279a2",
+          "name": "Get policy by id",
+          "request": {
+            "name": "Get policy by id",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fd6ef94c-2a72-4130-a367-60cbd51095da",
+              "name": "Policy document(s).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d0d07c0-cc38-42a3-9627-ff825ac79a15",
+          "name": "List policies",
+          "request": {
+            "name": "List policies",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_disabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name_regexp",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scope_regexp",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "version_regexp",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "94f9fbf7-def8-48b1-9507-5abb9953cadf",
+              "name": "List of policy identifiers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_disabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "name_regexp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scope_regexp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version_regexp",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65340eff-92ac-4526-9728-26009b480214",
+          "name": "Inspect policies",
+          "request": {
+            "name": "Inspect policies",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policies",
+                "inspect"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "731eda65-9ae8-4830-aa6e-1d9015cbd2cb",
+              "name": "Inspection result with actions and variables.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policies",
+                    "inspect"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d32f370-4aaa-4190-be62-f84f6a040e8a",
+          "name": "Delete a policy",
+          "request": {
+            "name": "Delete a policy",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policy",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "56d3e79c-c1c8-4a91-8a83-7a08d7f200f4",
+              "name": "Policy deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policy",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fde3d100-c8e5-4536-9022-c8ede9b9787f",
+          "name": "Disable a policy",
+          "request": {
+            "name": "Disable a policy",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policy",
+                "disable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c6b042a4-0fd1-4407-9d57-df6595f24872",
+              "name": "Policy disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policy",
+                    "disable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e62d8a9d-9d77-46a0-9c2e-c40bdcd3b161",
+          "name": "Enable a policy",
+          "request": {
+            "name": "Enable a policy",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "policy",
+                "enable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "52e4e801-4017-47e6-b369-76527d131a5c",
+              "name": "Policy enabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "policy",
+                    "enable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c75c927e-00a2-47c3-84b7-88a73c1779c0",
+      "name": "Admin Schemas",
+      "description": {
+        "content": "JSON schema management (Admin API).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7719c18-7cb0-4b23-8076-19110474393d",
+          "name": "Add or update JSON schemas",
+          "request": {
+            "name": "Add or update JSON schemas",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "schema"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1495bd40-11a4-41ba-bab0-45a2869c5aaf",
+              "name": "Schema added/updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "408a0826-227d-49be-be16-9d0f0fc0f288",
+          "name": "Get schema by id",
+          "request": {
+            "name": "Get schema by id",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "schema"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "88b230f5-f036-4e00-8fc3-5f493935736e",
+              "name": "Schema document(s).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1124c4e-93f5-4993-814d-c2e63f899fae",
+          "name": "Delete schemas",
+          "request": {
+            "name": "Delete schemas",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "schema"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3ec8479e-8c76-44ea-b606-097a3ca39505",
+              "name": "Schema deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5ae32b8-a1cb-4aca-9cf0-144bb3ab2506",
+          "name": "List schemas",
+          "request": {
+            "name": "List schemas",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "schemas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ab0b237e-6460-46fd-8017-ec0fb1a25668",
+              "name": "Schema identifiers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "schemas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3df5ebac-2e6c-4a22-8e49-c74fef934ac5",
+      "name": "Admin Audit",
+      "description": {
+        "content": "Audit and decision log access (Admin API).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e987279-2c89-4a4b-bf74-bdcd9bd9320c",
+          "name": "List audit log entries",
+          "request": {
+            "name": "List audit log entries",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "auditlog",
+                "list",
+                ":kind"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "tail",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "between.start",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "between.end",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lookup",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "kind",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1646b22f-3ee0-4c20-93e9-8c3a5151f56e",
+              "name": "Audit log entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "auditlog",
+                    "list",
+                    ":kind"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tail",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "between.start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "between.end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lookup",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "kind",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "914dee1f-f207-493a-a8a4-7743d4735881",
+      "name": "Admin Store",
+      "description": {
+        "content": "Policy store administration (Admin API).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "40b74177-05ee-4d91-9419-a4577a829424",
+          "name": "Purge policy revision history",
+          "request": {
+            "name": "Purge policy revision history",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "store",
+                "revisions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9f2383d9-5b40-47cd-884b-463c23d6a213",
+              "name": "Revision history purged.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "store",
+                    "revisions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1f494b0-1e2a-4662-884c-6df5d16855b5",
+          "name": "Reload the policy store",
+          "request": {
+            "name": "Reload the policy store",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "store",
+                "reload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "286d2125-bc06-45e3-a693-ce659e034466",
+              "name": "Reload triggered.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "store",
+                    "reload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3592",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6fb9951c-74e8-445a-9fe1-b3c939681be9",
+    "name": "Cerbos PDP REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for\nauthorization decisions and policy administration. Includes CheckResources,\nPlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for\npolicy and schema management. Generated as a best-effort spec from public\nCerbos documentation; the canonical OpenAPI is served by every PDP at\n/schema/swagger.json.\n\n\nContact Support:\n Name: Cerbos",
+      "type": "text/plain"
+    }
+  }
+}

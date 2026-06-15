@@ -1,0 +1,515 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Check",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/api/check/resources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Evaluate authorization for a principal against one or more resources and actions."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Plan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Plan resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/api/plan/resources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a query plan describing the conditions under which a principal may perform an action on resources matching a kind."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Server",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/api/server_info"
+          },
+          "docs": "Returns Cerbos PDP version, commit hash, and build date."
+        },
+        {
+          "info": {
+            "name": "OpenAPI specification",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/schema/swagger.json"
+          },
+          "docs": "Returns the OpenAPI/Swagger specification served by the PDP."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AuthZEN",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AuthZEN discovery",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/.well-known/authzen-configuration"
+          },
+          "docs": "OpenID AuthZEN configuration discovery document."
+        },
+        {
+          "info": {
+            "name": "AuthZEN single evaluation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/access/v1/evaluation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Single access evaluation request per OpenID AuthZEN."
+        },
+        {
+          "info": {
+            "name": "AuthZEN batch evaluations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/access/v1/evaluations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Batch access evaluations per OpenID AuthZEN."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Admin Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get policy by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/policy",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get policy by id"
+        },
+        {
+          "info": {
+            "name": "Add or update policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/admin/policy",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Add or update policies"
+        },
+        {
+          "info": {
+            "name": "Add or update policies (PUT)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3592/admin/policy",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Add or update policies (PUT)"
+        },
+        {
+          "info": {
+            "name": "List policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/policies",
+            "params": [
+              {
+                "name": "include_disabled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name_regexp",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scope_regexp",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version_regexp",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List policies"
+        },
+        {
+          "info": {
+            "name": "Inspect policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/policies/inspect",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Inspect policies"
+        },
+        {
+          "info": {
+            "name": "Delete a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/admin/policy/delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Delete a policy"
+        },
+        {
+          "info": {
+            "name": "Disable a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/admin/policy/disable",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Disable a policy"
+        },
+        {
+          "info": {
+            "name": "Enable a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/admin/policy/enable",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Enable a policy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Admin Schemas",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get schema by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/schema",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get schema by id"
+        },
+        {
+          "info": {
+            "name": "Add or update JSON schemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/admin/schema",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Add or update JSON schemas"
+        },
+        {
+          "info": {
+            "name": "Delete schemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3592/admin/schema",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Delete schemas"
+        },
+        {
+          "info": {
+            "name": "List schemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/schemas",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List schemas"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Admin Audit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List audit log entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/auditlog/list/:kind",
+            "params": [
+              {
+                "name": "kind",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "between.start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "between.end",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lookup",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List audit log entries"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Admin Store",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Purge policy revision history",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3592/admin/store/revisions",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Purge policy revision history"
+        },
+        {
+          "info": {
+            "name": "Reload the policy store",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/store/reload",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Reload the policy store"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
