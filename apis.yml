@@ -167,7 +167,7 @@ common:
   url: https://github.com/cerbos/cerbos
 - type: IssueTracker
   url: https://github.com/cerbos/cerbos/issues
-- type: Releases
+- type: ReleaseNotes
   url: https://github.com/cerbos/cerbos/releases
 - type: Blog
   url: https://www.cerbos.dev/blog
@@ -271,8 +271,8 @@ common:
   url: https://www.cerbos.dev/ecosystem
 - name: Agent Skills
   url: https://github.com/cerbos/skills
-  type: AgentSkill
-- type: LLMsTxt
+  type: AgentSkills
+- type: LlmsText
   url: https://docs.cerbos.dev/llms.txt
 integrations:
 - name: Cerbos
