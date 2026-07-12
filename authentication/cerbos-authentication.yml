@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cerbos-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override
+    in production).
+  sources:
+  - openapi/cerbos-openapi.yml

@@ -147,6 +147,10 @@ apis:
   - type: Documentation
     url: https://www.cerbos.dev/products/synapse
 common:
+- type: DomainSecurity
+  url: security/cerbos-domain-security.yml
+- type: Authentication
+  url: authentication/cerbos-authentication.yml
 - type: Website
   url: https://www.cerbos.dev
 - type: Documentation
