@@ -147,6 +147,8 @@ apis:
   - type: Documentation
     url: https://www.cerbos.dev/products/synapse
 common:
+- type: AgenticAccess
+  url: agentic-access/cerbos-agentic-access.yml
 - type: DomainSecurity
   url: security/cerbos-domain-security.yml
 - type: Authentication
