@@ -1,0 +1,178 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit Check API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Check
+  description: Evaluate authorization decisions.
+paths:
+  /api/check/resources:
+    post:
+      tags:
+      - Check
+      summary: Check resources
+      description: Evaluate authorization for a principal against one or more resources and actions.
+      operationId: checkResources
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckResourcesRequest'
+      responses:
+        '200':
+          description: Authorization decisions per resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckResourcesResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+components:
+  schemas:
+    Resource:
+      type: object
+      required:
+      - kind
+      - id
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        attr:
+          type: object
+          additionalProperties: true
+    ResourceEntry:
+      type: object
+      required:
+      - actions
+      - resource
+      properties:
+        actions:
+          type: array
+          items:
+            type: string
+        resource:
+          $ref: '#/components/schemas/Resource'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+    CheckResourcesRequest:
+      type: object
+      required:
+      - principal
+      - resources
+      properties:
+        requestId:
+          type: string
+        principal:
+          $ref: '#/components/schemas/Principal'
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceEntry'
+        auxData:
+          type: object
+        includeMeta:
+          type: boolean
+    Principal:
+      type: object
+      required:
+      - id
+      - roles
+      properties:
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        attr:
+          type: object
+          additionalProperties: true
+    CheckResourcesResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              resource:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  kind:
+                    type: string
+                  policyVersion:
+                    type: string
+                  scope:
+                    type: string
+              actions:
+                type: object
+                additionalProperties:
+                  type: string
+                  enum:
+                  - EFFECT_ALLOW
+                  - EFFECT_DENY
+                  - EFFECT_NO_MATCH
+              validationErrors:
+                type: array
+                items:
+                  type: object
+        cerbosCallId:
+          type: string
+  responses:
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

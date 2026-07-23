@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Admin Audit
+  description: Audit and decision log access (Admin API).
+paths:
+  /admin/auditlog/list/{kind}:
+    get:
+      tags:
+      - Admin Audit
+      summary: List audit log entries
+      operationId: adminListAuditLog
+      security:
+      - basicAuth: []
+      parameters:
+      - in: path
+        name: kind
+        required: true
+        schema:
+          type: string
+          enum:
+          - KIND_ACCESS
+          - KIND_DECISION
+      - in: query
+        name: tail
+        schema:
+          type: integer
+      - in: query
+        name: between.start
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: between.end
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: since
+        schema:
+          type: string
+      - in: query
+        name: lookup
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Audit log entries.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit Server API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Server
+  description: PDP server metadata.
+paths:
+  /api/server_info:
+    get:
+      tags:
+      - Server
+      summary: Server information
+      description: Returns Cerbos PDP version, commit hash, and build date.
+      operationId: serverInfo
+      responses:
+        '200':
+          description: Server metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerInfo'
+  /schema/swagger.json:
+    get:
+      tags:
+      - Server
+      summary: OpenAPI specification
+      description: Returns the OpenAPI/Swagger specification served by the PDP.
+      operationId: swaggerSpec
+      responses:
+        '200':
+          description: OpenAPI document.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    ServerInfo:
+      type: object
+      properties:
+        version:
+          type: string
+        commit:
+          type: string
+        buildDate:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

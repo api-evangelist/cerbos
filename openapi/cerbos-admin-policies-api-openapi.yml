@@ -1,0 +1,191 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit Admin Policies API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Admin Policies
+  description: Policy management (Admin API).
+paths:
+  /admin/policy:
+    post:
+      tags:
+      - Admin Policies
+      summary: Add or update policies
+      operationId: adminAddOrUpdatePolicy
+      security:
+      - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Policy added/updated.
+    put:
+      tags:
+      - Admin Policies
+      summary: Add or update policies (PUT)
+      operationId: adminAddOrUpdatePolicyPut
+      security:
+      - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Policy added/updated.
+    get:
+      tags:
+      - Admin Policies
+      summary: Get policy by id
+      operationId: adminGetPolicy
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+        style: form
+        explode: true
+      responses:
+        '200':
+          description: Policy document(s).
+          content:
+            application/json:
+              schema:
+                type: object
+  /admin/policies:
+    get:
+      tags:
+      - Admin Policies
+      summary: List policies
+      operationId: adminListPolicies
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: include_disabled
+        schema:
+          type: boolean
+      - in: query
+        name: name_regexp
+        schema:
+          type: string
+      - in: query
+        name: scope_regexp
+        schema:
+          type: string
+      - in: query
+        name: version_regexp
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of policy identifiers.
+          content:
+            application/json:
+              schema:
+                type: object
+  /admin/policies/inspect:
+    get:
+      tags:
+      - Admin Policies
+      summary: Inspect policies
+      operationId: adminInspectPolicies
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: Inspection result with actions and variables.
+          content:
+            application/json:
+              schema:
+                type: object
+  /admin/policy/delete:
+    post:
+      tags:
+      - Admin Policies
+      summary: Delete a policy
+      operationId: adminDeletePolicy
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Policy deleted.
+  /admin/policy/disable:
+    post:
+      tags:
+      - Admin Policies
+      summary: Disable a policy
+      operationId: adminDisablePolicy
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Policy disabled.
+  /admin/policy/enable:
+    post:
+      tags:
+      - Admin Policies
+      summary: Enable a policy
+      operationId: adminEnablePolicy
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Policy enabled.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

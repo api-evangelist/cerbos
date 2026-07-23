@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit Admin Store API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Admin Store
+  description: Policy store administration (Admin API).
+paths:
+  /admin/store/revisions:
+    delete:
+      tags:
+      - Admin Store
+      summary: Purge policy revision history
+      operationId: adminPurgeStoreRevisions
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: Revision history purged.
+  /admin/store/reload:
+    get:
+      tags:
+      - Admin Store
+      summary: Reload the policy store
+      operationId: adminReloadStore
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: Reload triggered.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

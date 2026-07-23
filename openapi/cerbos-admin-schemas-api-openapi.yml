@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit Admin Schemas API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Admin Schemas
+  description: JSON schema management (Admin API).
+paths:
+  /admin/schema:
+    post:
+      tags:
+      - Admin Schemas
+      summary: Add or update JSON schemas
+      operationId: adminAddOrUpdateSchema
+      security:
+      - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Schema added/updated.
+    get:
+      tags:
+      - Admin Schemas
+      summary: Get schema by id
+      operationId: adminGetSchema
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+        style: form
+        explode: true
+      responses:
+        '200':
+          description: Schema document(s).
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Admin Schemas
+      summary: Delete schemas
+      operationId: adminDeleteSchema
+      security:
+      - basicAuth: []
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+        style: form
+        explode: true
+      responses:
+        '200':
+          description: Schema deleted.
+  /admin/schemas:
+    get:
+      tags:
+      - Admin Schemas
+      summary: List schemas
+      operationId: adminListSchemas
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: Schema identifiers.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

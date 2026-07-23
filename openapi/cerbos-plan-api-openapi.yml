@@ -1,0 +1,150 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit Plan API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: Plan
+  description: Generate query plans for resource filtering.
+paths:
+  /api/plan/resources:
+    post:
+      tags:
+      - Plan
+      summary: Plan resources
+      description: Returns a query plan describing the conditions under which a principal may perform an action on resources matching a kind.
+      operationId: planResources
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanResourcesRequest'
+      responses:
+        '200':
+          description: Query plan response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanResourcesResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+components:
+  schemas:
+    PlanResourcesResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+        action:
+          type: string
+        resourceKind:
+          type: string
+        policyVersion:
+          type: string
+        filter:
+          type: object
+          properties:
+            kind:
+              type: string
+              enum:
+              - KIND_ALWAYS_ALLOWED
+              - KIND_ALWAYS_DENIED
+              - KIND_CONDITIONAL
+            condition:
+              type: object
+        cerbosCallId:
+          type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+    Principal:
+      type: object
+      required:
+      - id
+      - roles
+      properties:
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        attr:
+          type: object
+          additionalProperties: true
+    PlanResourcesRequest:
+      type: object
+      required:
+      - principal
+      - resource
+      - action
+      properties:
+        requestId:
+          type: string
+        action:
+          type: string
+        principal:
+          $ref: '#/components/schemas/Principal'
+        resource:
+          type: object
+          required:
+          - kind
+          properties:
+            kind:
+              type: string
+            policyVersion:
+              type: string
+            scope:
+              type: string
+            attr:
+              type: object
+        auxData:
+          type: object
+        includeMeta:
+          type: boolean
+  responses:
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).

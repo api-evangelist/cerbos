@@ -1,0 +1,128 @@
+openapi: 3.1.0
+info:
+  title: Cerbos PDP REST Admin Audit AuthZEN API
+  description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
+
+    authorization decisions and policy administration. Includes CheckResources,
+
+    PlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for
+
+    policy and schema management. Generated as a best-effort spec from public
+
+    Cerbos documentation; the canonical OpenAPI is served by every PDP at
+
+    /schema/swagger.json.
+
+    '
+  version: 0.x
+  contact:
+    name: Cerbos
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  license:
+    name: Apache 2.0
+    url: https://github.com/cerbos/cerbos/blob/main/LICENSE
+servers:
+- url: http://localhost:3592
+  description: Local Cerbos PDP (default HTTP port).
+tags:
+- name: AuthZEN
+  description: OpenID AuthZEN standards-compliant evaluation endpoints.
+paths:
+  /.well-known/authzen-configuration:
+    get:
+      tags:
+      - AuthZEN
+      summary: AuthZEN discovery
+      description: OpenID AuthZEN configuration discovery document.
+      operationId: authzenConfiguration
+      responses:
+        '200':
+          description: AuthZEN configuration.
+          content:
+            application/json:
+              schema:
+                type: object
+  /access/v1/evaluation:
+    post:
+      tags:
+      - AuthZEN
+      summary: AuthZEN single evaluation
+      description: Single access evaluation request per OpenID AuthZEN.
+      operationId: authzenEvaluation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthZenEvaluationRequest'
+      responses:
+        '200':
+          description: AuthZEN evaluation decision.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthZenEvaluationResponse'
+  /access/v1/evaluations:
+    post:
+      tags:
+      - AuthZEN
+      summary: AuthZEN batch evaluations
+      description: Batch access evaluations per OpenID AuthZEN.
+      operationId: authzenEvaluations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Batch evaluation decisions.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    AuthZenEvaluationRequest:
+      type: object
+      properties:
+        subject:
+          type: object
+          properties:
+            type:
+              type: string
+            id:
+              type: string
+            properties:
+              type: object
+        resource:
+          type: object
+          properties:
+            type:
+              type: string
+            id:
+              type: string
+            properties:
+              type: object
+        action:
+          type: object
+          properties:
+            name:
+              type: string
+            properties:
+              type: object
+        context:
+          type: object
+    AuthZenEvaluationResponse:
+      type: object
+      properties:
+        decision:
+          type: boolean
+        context:
+          type: object
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for the Admin API (default cerbos/cerbosAdmin; override in production).
