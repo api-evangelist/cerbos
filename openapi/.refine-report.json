@@ -1,0 +1,28 @@
+{
+  "provider": "cerbos",
+  "sources": [
+    "cerbos-admin-audit-api-openapi.yml",
+    "cerbos-admin-policies-api-openapi.yml",
+    "cerbos-admin-schemas-api-openapi.yml",
+    "cerbos-admin-store-api-openapi.yml",
+    "cerbos-authzen-api-openapi.yml",
+    "cerbos-check-api-openapi.yml",
+    "cerbos-plan-api-openapi.yml",
+    "cerbos-server-api-openapi.yml"
+  ],
+  "outputs": [
+    "cerbos-admin-audit-api-openapi.yml",
+    "cerbos-admin-policies-api-openapi.yml",
+    "cerbos-admin-schemas-api-openapi.yml",
+    "cerbos-admin-store-api-openapi.yml",
+    "cerbos-authzen-api-openapi.yml",
+    "cerbos-check-api-openapi.yml",
+    "cerbos-plan-api-openapi.yml",
+    "cerbos-server-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
