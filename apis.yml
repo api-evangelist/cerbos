@@ -256,6 +256,10 @@ apis:
   - type: GraphQL
     url: graphql/cerbos-graphql.md
 common:
+- type: CodeOfConduct
+  url: https://github.com/cerbos/cerbos/blob/main/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/cerbos/cerbos/blob/main/CONTRIBUTING.md
 - type: AgenticAccess
   url: agentic-access/cerbos-agentic-access.yml
 - type: DomainSecurity
