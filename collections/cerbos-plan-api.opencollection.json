@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST Admin Audit Plan API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Plan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Plan resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/api/plan/resources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a query plan describing the conditions under which a principal may perform an action on resources matching a kind."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

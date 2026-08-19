@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST Admin Audit Check API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Check",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/api/check/resources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Evaluate authorization for a principal against one or more resources and actions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

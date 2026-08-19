@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "fbf9f42a-6be1-4371-a4dd-54a7cc8d8528",
+      "name": "Admin Audit",
+      "description": {
+        "content": "Audit and decision log access (Admin API).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f589a3b3-45db-404c-af6f-b993fc8f1d65",
+          "name": "List audit log entries",
+          "request": {
+            "name": "List audit log entries",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "auditlog",
+                "list",
+                ":kind"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "tail",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "between.start",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "between.end",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lookup",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "kind",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c2db9c19-7841-4f85-a91e-57ae4a1fc362",
+              "name": "Audit log entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "auditlog",
+                    "list",
+                    ":kind"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tail",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "between.start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "between.end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lookup",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "kind",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3592",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0a512780-d0a9-4de1-b228-b17c5ba089a2",
+    "name": "Cerbos PDP REST Admin Audit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for\nauthorization decisions and policy administration. Includes CheckResources,\nPlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for\npolicy and schema management. Generated as a best-effort spec from public\nCerbos documentation; the canonical OpenAPI is served by every PDP at\n/schema/swagger.json.\n\n\nContact Support:\n Name: Cerbos",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "item": [
+    {
+      "id": "1d85e998-e88e-4565-b50f-b648db57853d",
+      "name": "AuthZEN",
+      "description": {
+        "content": "OpenID AuthZEN standards-compliant evaluation endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "843524bc-dc71-4ddc-ae0f-ebbc97b52b81",
+          "name": "AuthZEN discovery",
+          "request": {
+            "name": "AuthZEN discovery",
+            "description": {
+              "content": "OpenID AuthZEN configuration discovery document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ".well-known",
+                "authzen-configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "731b7b42-946a-49a9-8df3-bfe0e4016297",
+              "name": "AuthZEN configuration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ".well-known",
+                    "authzen-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab4b1a92-9b78-4dde-b17d-317cfa2414d2",
+          "name": "AuthZEN single evaluation",
+          "request": {
+            "name": "AuthZEN single evaluation",
+            "description": {
+              "content": "Single access evaluation request per OpenID AuthZEN.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "evaluation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14548408-c106-44e6-855d-171b9f2cdf55",
+              "name": "AuthZEN evaluation decision.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"subject\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"decision\": false,\n  \"context\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29a8b501-e5db-4d79-a6b2-9e5d0b08a899",
+          "name": "AuthZEN batch evaluations",
+          "request": {
+            "name": "AuthZEN batch evaluations",
+            "description": {
+              "content": "Batch access evaluations per OpenID AuthZEN.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "evaluations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4123a8d2-84f7-47fd-b8d2-ca4320e6bc65",
+              "name": "Batch evaluation decisions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3592",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7eb376a8-61b3-4655-8964-9b0099be4ac8",
+    "name": "Cerbos PDP REST Admin Audit AuthZEN API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for\nauthorization decisions and policy administration. Includes CheckResources,\nPlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for\npolicy and schema management. Generated as a best-effort spec from public\nCerbos documentation; the canonical OpenAPI is served by every PDP at\n/schema/swagger.json.\n\n\nContact Support:\n Name: Cerbos",
+      "type": "text/plain"
+    }
+  }
+}

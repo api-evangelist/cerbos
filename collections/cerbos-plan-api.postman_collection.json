@@ -1,0 +1,172 @@
+{
+  "item": [
+    {
+      "id": "48b767cc-9383-4d9c-bcc2-17afe33a85c9",
+      "name": "Plan",
+      "description": {
+        "content": "Generate query plans for resource filtering.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cb686bb2-4672-4fa6-a693-d742e78cae70",
+          "name": "Plan resources",
+          "request": {
+            "name": "Plan resources",
+            "description": {
+              "content": "Returns a query plan describing the conditions under which a principal may perform an action on resources matching a kind.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "plan",
+                "resources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"principal\": {\n    \"id\": \"<string>\",\n    \"roles\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": {\n      \"key_0\": 5747.095189589469\n    }\n  },\n  \"resource\": {\n    \"kind\": \"<string>\",\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": \"<object>\"\n  },\n  \"action\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8883ba44-23d2-4635-836a-c78b541b5241",
+              "name": "Query plan response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "plan",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": \"string\",\n      \"key_1\": false,\n      \"key_2\": \"string\"\n    }\n  },\n  \"resource\": {\n    \"kind\": \"<string>\",\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": \"<object>\"\n  },\n  \"action\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requestId\": \"string\",\n  \"action\": \"string\",\n  \"resourceKind\": \"string\",\n  \"policyVersion\": \"string\",\n  \"filter\": {\n    \"kind\": \"KIND_ALWAYS_DENIED\",\n    \"condition\": {}\n  },\n  \"cerbosCallId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c507bfa-3c04-40e7-9570-c8c87454f81d",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "plan",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": \"string\",\n      \"key_1\": false,\n      \"key_2\": \"string\"\n    }\n  },\n  \"resource\": {\n    \"kind\": \"<string>\",\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": \"<object>\"\n  },\n  \"action\": \"<string>\",\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4274,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3592",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1658a387-4e4d-45c1-869f-7d2dc837a536",
+    "name": "Cerbos PDP REST Admin Audit Plan API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for\nauthorization decisions and policy administration. Includes CheckResources,\nPlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for\npolicy and schema management. Generated as a best-effort spec from public\nCerbos documentation; the canonical OpenAPI is served by every PDP at\n/schema/swagger.json.\n\n\nContact Support:\n Name: Cerbos",
+      "type": "text/plain"
+    }
+  }
+}

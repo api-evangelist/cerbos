@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST Admin Audit AuthZEN API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AuthZEN",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AuthZEN discovery",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/.well-known/authzen-configuration"
+          },
+          "docs": "OpenID AuthZEN configuration discovery document."
+        },
+        {
+          "info": {
+            "name": "AuthZEN single evaluation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/access/v1/evaluation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Single access evaluation request per OpenID AuthZEN."
+        },
+        {
+          "info": {
+            "name": "AuthZEN batch evaluations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3592/access/v1/evaluations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Batch access evaluations per OpenID AuthZEN."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

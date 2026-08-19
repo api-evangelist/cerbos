@@ -1,0 +1,172 @@
+{
+  "item": [
+    {
+      "id": "57a1c8d6-494d-460d-8b42-940ecd8ee22b",
+      "name": "Check",
+      "description": {
+        "content": "Evaluate authorization decisions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "370366ab-a5f1-4483-b73d-4395d1a71515",
+          "name": "Check resources",
+          "request": {
+            "name": "Check resources",
+            "description": {
+              "content": "Evaluate authorization for a principal against one or more resources and actions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "check",
+                "resources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"principal\": {\n    \"id\": \"<string>\",\n    \"roles\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"policyVersion\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"attr\": {\n      \"key_0\": false,\n      \"key_1\": 8998,\n      \"key_2\": true\n    }\n  },\n  \"resources\": [\n    {\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"resource\": {\n        \"kind\": \"<string>\",\n        \"id\": \"<string>\",\n        \"policyVersion\": \"<string>\",\n        \"scope\": \"<string>\",\n        \"attr\": {\n          \"key_0\": false,\n          \"key_1\": 1355,\n          \"key_2\": \"string\"\n        }\n      }\n    },\n    {\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"resource\": {\n        \"kind\": \"<string>\",\n        \"id\": \"<string>\",\n        \"policyVersion\": \"<string>\",\n        \"scope\": \"<string>\",\n        \"attr\": {\n          \"key_0\": 7969.2226185382915,\n          \"key_1\": true,\n          \"key_2\": \"string\",\n          \"key_3\": 3281\n        }\n      }\n    }\n  ],\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "48e34252-7446-4af6-ac0f-43fdefff53d4",
+              "name": "Authorization decisions per resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "check",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": 8128.775332650283,\n      \"key_1\": 5175\n    }\n  },\n  \"resources\": [\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": \"string\",\n          \"key_1\": true\n        }\n      }\n    },\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": false\n        }\n      }\n    }\n  ],\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requestId\": \"string\",\n  \"results\": [\n    {\n      \"resource\": {\n        \"id\": \"string\",\n        \"kind\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\"\n      },\n      \"actions\": {\n        \"key_0\": \"EFFECT_ALLOW\",\n        \"key_1\": \"EFFECT_DENY\"\n      }\n    },\n    {\n      \"resource\": {\n        \"id\": \"string\",\n        \"kind\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\"\n      },\n      \"actions\": {\n        \"key_0\": \"EFFECT_NO_MATCH\",\n        \"key_1\": \"EFFECT_NO_MATCH\"\n      }\n    }\n  ],\n  \"cerbosCallId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ccdec304-5ea6-4a8f-b3cc-f03712b883ef",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "check",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": {\n    \"id\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"policyVersion\": \"string\",\n    \"scope\": \"string\",\n    \"attr\": {\n      \"key_0\": 8128.775332650283,\n      \"key_1\": 5175\n    }\n  },\n  \"resources\": [\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": \"string\",\n          \"key_1\": true\n        }\n      }\n    },\n    {\n      \"actions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"resource\": {\n        \"kind\": \"string\",\n        \"id\": \"string\",\n        \"policyVersion\": \"string\",\n        \"scope\": \"string\",\n        \"attr\": {\n          \"key_0\": false\n        }\n      }\n    }\n  ],\n  \"requestId\": \"<string>\",\n  \"auxData\": \"<object>\",\n  \"includeMeta\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8177,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3592",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "106932f9-00a9-4d40-8496-14b7ade219c8",
+    "name": "Cerbos PDP REST Admin Audit Check API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for\nauthorization decisions and policy administration. Includes CheckResources,\nPlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for\npolicy and schema management. Generated as a best-effort spec from public\nCerbos documentation; the canonical OpenAPI is served by every PDP at\n/schema/swagger.json.\n\n\nContact Support:\n Name: Cerbos",
+      "type": "text/plain"
+    }
+  }
+}

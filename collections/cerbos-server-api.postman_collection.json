@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "685cbcea-5859-4fc0-b0bd-3894bf335d2b",
+      "name": "Server",
+      "description": {
+        "content": "PDP server metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "54b4484a-deca-498a-8660-03b849ecbbe9",
+          "name": "Server information",
+          "request": {
+            "name": "Server information",
+            "description": {
+              "content": "Returns Cerbos PDP version, commit hash, and build date.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "server_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8c56c7a-d416-425c-b767-93cf81af7c8c",
+              "name": "Server metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server_info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\",\n  \"commit\": \"string\",\n  \"buildDate\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "982b8496-e733-4664-8a0b-319e514636f5",
+          "name": "OpenAPI specification",
+          "request": {
+            "name": "OpenAPI specification",
+            "description": {
+              "content": "Returns the OpenAPI/Swagger specification served by the PDP.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schema",
+                "swagger.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0be511e-f36b-45e9-9223-5d5936670fc4",
+              "name": "OpenAPI document.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schema",
+                    "swagger.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3592",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8e15e515-0a62-4503-a262-44ddc0117983",
+    "name": "Cerbos PDP REST Admin Audit Server API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for\nauthorization decisions and policy administration. Includes CheckResources,\nPlanResources, ServerInfo, OpenID AuthZEN endpoints, and the Admin API for\npolicy and schema management. Generated as a best-effort spec from public\nCerbos documentation; the canonical OpenAPI is served by every PDP at\n/schema/swagger.json.\n\n\nContact Support:\n Name: Cerbos",
+      "type": "text/plain"
+    }
+  }
+}

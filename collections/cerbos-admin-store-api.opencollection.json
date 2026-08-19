@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST Admin Audit Admin Store API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Store",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Purge policy revision history",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3592/admin/store/revisions",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Purge policy revision history"
+        },
+        {
+          "info": {
+            "name": "Reload the policy store",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/store/reload",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Reload the policy store"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST Admin Audit Server API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Server",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/api/server_info"
+          },
+          "docs": "Returns Cerbos PDP version, commit hash, and build date."
+        },
+        {
+          "info": {
+            "name": "OpenAPI specification",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/schema/swagger.json"
+          },
+          "docs": "Returns the OpenAPI/Swagger specification served by the PDP."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cerbos PDP REST Admin Audit API",
+    "version": "0.x"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Audit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List audit log entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3592/admin/auditlog/list/:kind",
+            "params": [
+              {
+                "name": "kind",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "between.start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "between.end",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lookup",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List audit log entries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
