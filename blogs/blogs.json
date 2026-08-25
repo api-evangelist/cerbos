@@ -3,10 +3,10 @@
   "feeds": [
     {
       "source": "https://www.cerbos.dev/blog",
-      "feed_url": "https://www.cerbos.dev/blog",
+      "feed_url": "https://www.cerbos.dev/rss/index.xml",
       "title": "",
-      "saved": 0,
-      "method": "none"
+      "saved": 7,
+      "method": "discovered"
     },
     {
       "source": "https://github.com/cerbos/cerbos/releases.atom",
@@ -23,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 80,
-  "fetched": "2026-08-15T12:22:01Z"
+  "post_count": 87,
+  "fetched": "2026-08-22T20:20:02Z"
 }
