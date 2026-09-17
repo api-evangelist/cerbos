@@ -219,22 +219,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
   - type: GraphQL
     url: graphql/cerbos-graphql.md
-- aid: cerbos:cerbos-authzen-api
-  name: Cerbos AuthZEN API
-  description: OpenID AuthZEN standards-compliant evaluation endpoints.
-  humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
-  baseURL: http://localhost:3592
-  tags:
-  - AuthZEN
-  properties:
-  - type: OpenAPI
-    url: openapi/cerbos-authzen-api-openapi.yml
-  - type: Documentation
-    url: https://docs.cerbos.dev/cerbos/latest/api/index
-  - type: Reference
-    url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-check-api
   name: Cerbos Check API
   description: Evaluate authorization decisions.
@@ -277,6 +261,22 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cerbos-server-api-openapi.yml
+  - type: Documentation
+    url: https://docs.cerbos.dev/cerbos/latest/api/index
+  - type: Reference
+    url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
+  - type: GraphQL
+    url: graphql/cerbos-graphql.md
+- aid: cerbos:cerbos-auth-zen-api
+  name: Cerbos Auth ZEN API
+  description: OpenID AuthZEN standards-compliant evaluation endpoints.
+  humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
+  baseURL: localhost:3593
+  tags:
+  - Auth ZEN
+  properties:
+  - type: OpenAPI
+    url: openapi/cerbos-auth-zen-api-openapi.yml
   - type: Documentation
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
