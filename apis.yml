@@ -119,6 +119,10 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/admin_api
   tags:
   - Admin
+  - Audit Logs
+  - Policy Management
+  tags_raw:
+  - Admin
   - Audit Log
   - Policy Management
   properties:
@@ -257,6 +261,8 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
   baseURL: http://localhost:3592
   tags:
+  - Servers
+  tags_raw:
   - Server
   properties:
   - type: OpenAPI
@@ -273,6 +279,8 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
   baseURL: localhost:3593
   tags:
+  - AuthZEN
+  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
