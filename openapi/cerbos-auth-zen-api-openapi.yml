@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Cerbos PDP REST Admin Audit AuthZEN API
+  title: Cerbos PDP REST Auth ZEN API
   description: 'REST/JSON interface exposed by the Cerbos Policy Decision Point (PDP) for
 
     authorization decisions and policy administration. Includes CheckResources,
@@ -11,9 +11,7 @@ info:
 
     Cerbos documentation; the canonical OpenAPI is served by every PDP at
 
-    /schema/swagger.json.
-
-    '
+    /schema/swagger.json.'
   version: 0.x
   contact:
     name: Cerbos
@@ -25,13 +23,13 @@ servers:
 - url: http://localhost:3592
   description: Local Cerbos PDP (default HTTP port).
 tags:
-- name: AuthZEN
+- name: Auth ZEN
   description: OpenID AuthZEN standards-compliant evaluation endpoints.
 paths:
   /.well-known/authzen-configuration:
     get:
       tags:
-      - AuthZEN
+      - Auth ZEN
       summary: AuthZEN discovery
       description: OpenID AuthZEN configuration discovery document.
       operationId: authzenConfiguration
@@ -45,7 +43,7 @@ paths:
   /access/v1/evaluation:
     post:
       tags:
-      - AuthZEN
+      - Auth ZEN
       summary: AuthZEN single evaluation
       description: Single access evaluation request per OpenID AuthZEN.
       operationId: authzenEvaluation
@@ -65,7 +63,7 @@ paths:
   /access/v1/evaluations:
     post:
       tags:
-      - AuthZEN
+      - Auth ZEN
       summary: AuthZEN batch evaluations
       description: Batch access evaluations per OpenID AuthZEN.
       operationId: authzenEvaluations
@@ -84,6 +82,13 @@ paths:
                 type: object
 components:
   schemas:
+    AuthZenEvaluationResponse:
+      type: object
+      properties:
+        decision:
+          type: boolean
+        context:
+          type: object
     AuthZenEvaluationRequest:
       type: object
       properties:
@@ -112,13 +117,6 @@ components:
               type: string
             properties:
               type: object
-        context:
-          type: object
-    AuthZenEvaluationResponse:
-      type: object
-      properties:
-        decision:
-          type: boolean
         context:
           type: object
   securitySchemes:

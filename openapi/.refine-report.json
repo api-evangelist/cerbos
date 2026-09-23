@@ -1,14 +1,7 @@
 {
   "provider": "cerbos",
   "sources": [
-    "cerbos-admin-audit-api-openapi.yml",
-    "cerbos-admin-policies-api-openapi.yml",
-    "cerbos-admin-schemas-api-openapi.yml",
-    "cerbos-admin-store-api-openapi.yml",
-    "cerbos-authzen-api-openapi.yml",
-    "cerbos-check-api-openapi.yml",
-    "cerbos-plan-api-openapi.yml",
-    "cerbos-server-api-openapi.yml"
+    "_original/cerbos-openapi.yml"
   ],
   "outputs": [
     "cerbos-admin-audit-api-openapi.yml",
@@ -20,9 +13,25 @@
     "cerbos-plan-api-openapi.yml",
     "cerbos-server-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cerbos-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: cerbos-auth-zen-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 13 total)"
+  ],
+  "skipped": [
+    "cerbos-admin-audit-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-admin-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-admin-schemas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-admin-store-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-auth-zen-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-check-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-plan-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cerbos-server-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
