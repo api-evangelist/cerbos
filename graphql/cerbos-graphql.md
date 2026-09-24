@@ -1,1 +1,0 @@
-# Cerbos GraphQL API

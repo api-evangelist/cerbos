@@ -48,7 +48,7 @@ tags:
 - Access Control
 - Authorization
 - AuthZEN
-- Open-Source
+- Open Source
 - PBAC
 - PDP
 - Permissions
@@ -69,6 +69,7 @@ tags_raw:
 - RBAC
 - ReBAC
 - Zero Trust
+- Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cerbos/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -173,8 +174,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-admin-policies-api
   name: Cerbos Admin Policies API
   description: Policy management (Admin API).
@@ -189,8 +188,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-admin-schemas-api
   name: Cerbos Admin Schemas API
   description: JSON schema management (Admin API).
@@ -205,8 +202,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-admin-store-api
   name: Cerbos Admin Store API
   description: Policy store administration (Admin API).
@@ -221,8 +216,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-check-api
   name: Cerbos Check API
   description: Evaluate authorization decisions.
@@ -237,8 +230,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-plan-api
   name: Cerbos Plan API
   description: Generate query plans for resource filtering.
@@ -253,8 +244,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-server-api
   name: Cerbos Server API
   description: PDP server metadata.
@@ -271,8 +260,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 - aid: cerbos:cerbos-auth-zen-api
   name: Cerbos Auth ZEN API
   description: OpenID AuthZEN standards-compliant evaluation endpoints.
@@ -289,8 +276,6 @@ apis:
     url: https://docs.cerbos.dev/cerbos/latest/api/index
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
-  - type: GraphQL
-    url: graphql/cerbos-graphql.md
 common:
 - type: CodeOfConduct
   url: https://github.com/cerbos/cerbos/blob/main/CODE_OF_CONDUCT.md
