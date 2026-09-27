@@ -49,13 +49,6 @@ paths:
         '400':
           $ref: '#/components/responses/Error'
 components:
-  responses:
-    Error:
-      description: Error response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     ResourceEntry:
       type: object
@@ -80,6 +73,41 @@ components:
           type: array
           items:
             type: object
+    CheckResourcesRequest:
+      type: object
+      required:
+      - principal
+      - resources
+      properties:
+        requestId:
+          type: string
+        principal:
+          $ref: '#/components/schemas/Principal'
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceEntry'
+        auxData:
+          type: object
+        includeMeta:
+          type: boolean
+    Resource:
+      type: object
+      required:
+      - kind
+      - id
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        attr:
+          type: object
+          additionalProperties: true
     Principal:
       type: object
       required:
@@ -134,41 +162,13 @@ components:
                   type: object
         cerbosCallId:
           type: string
-    CheckResourcesRequest:
-      type: object
-      required:
-      - principal
-      - resources
-      properties:
-        requestId:
-          type: string
-        principal:
-          $ref: '#/components/schemas/Principal'
-        resources:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceEntry'
-        auxData:
-          type: object
-        includeMeta:
-          type: boolean
-    Resource:
-      type: object
-      required:
-      - kind
-      - id
-      properties:
-        kind:
-          type: string
-        id:
-          type: string
-        policyVersion:
-          type: string
-        scope:
-          type: string
-        attr:
-          type: object
-          additionalProperties: true
+  responses:
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http

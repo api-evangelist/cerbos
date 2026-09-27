@@ -15,17 +15,22 @@ description: >-
   and SQLAlchemy.
 type: Index
 deliveryModel:
-  model: unknown
-  open_source: unknown
+  model: open-core
+  license: Apache-2.0
+  license_evidence:
+    repo: cerbos/cerbos
+    spdx: Apache-2.0
+    stars: 4593
+  open_source: true
   commercial: true
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: medium
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -266,8 +271,6 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
   baseURL: localhost:3593
   tags:
-  - AuthZEN
-  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
