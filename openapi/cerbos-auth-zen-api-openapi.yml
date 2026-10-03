@@ -82,6 +82,13 @@ paths:
                 type: object
 components:
   schemas:
+    AuthZenEvaluationResponse:
+      type: object
+      properties:
+        decision:
+          type: boolean
+        context:
+          type: object
     AuthZenEvaluationRequest:
       type: object
       properties:
@@ -110,13 +117,6 @@ components:
               type: string
             properties:
               type: object
-        context:
-          type: object
-    AuthZenEvaluationResponse:
-      type: object
-      properties:
-        decision:
-          type: boolean
         context:
           type: object
   securitySchemes:

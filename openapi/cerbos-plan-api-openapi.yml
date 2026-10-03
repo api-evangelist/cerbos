@@ -50,47 +50,6 @@ paths:
           $ref: '#/components/responses/Error'
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: object
-    PlanResourcesRequest:
-      type: object
-      required:
-      - principal
-      - resource
-      - action
-      properties:
-        requestId:
-          type: string
-        action:
-          type: string
-        principal:
-          $ref: '#/components/schemas/Principal'
-        resource:
-          type: object
-          required:
-          - kind
-          properties:
-            kind:
-              type: string
-            policyVersion:
-              type: string
-            scope:
-              type: string
-            attr:
-              type: object
-        auxData:
-          type: object
-        includeMeta:
-          type: boolean
     PlanResourcesResponse:
       type: object
       properties:
@@ -134,6 +93,47 @@ components:
         attr:
           type: object
           additionalProperties: true
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+    PlanResourcesRequest:
+      type: object
+      required:
+      - principal
+      - resource
+      - action
+      properties:
+        requestId:
+          type: string
+        action:
+          type: string
+        principal:
+          $ref: '#/components/schemas/Principal'
+        resource:
+          type: object
+          required:
+          - kind
+          properties:
+            kind:
+              type: string
+            policyVersion:
+              type: string
+            scope:
+              type: string
+            attr:
+              type: object
+        auxData:
+          type: object
+        includeMeta:
+          type: boolean
   responses:
     Error:
       description: Error response.
