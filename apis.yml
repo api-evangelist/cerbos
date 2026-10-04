@@ -271,6 +271,8 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
   baseURL: localhost:3593
   tags:
+  - AuthZEN
+  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
@@ -280,6 +282,9 @@ apis:
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
 common:
+- type: CapabilityMap
+  url: capabilities/cerbos-capability-edges.yml
+  name: Cerbos Business Capability Map
 - type: CodeOfConduct
   url: https://github.com/cerbos/cerbos/blob/main/CODE_OF_CONDUCT.md
 - type: ContributionGuide
