@@ -271,8 +271,6 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
   baseURL: localhost:3593
   tags:
-  - AuthZEN
-  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI

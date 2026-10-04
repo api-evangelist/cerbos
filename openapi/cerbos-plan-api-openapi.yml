@@ -50,60 +50,6 @@ paths:
           $ref: '#/components/responses/Error'
 components:
   schemas:
-    PlanResourcesResponse:
-      type: object
-      properties:
-        requestId:
-          type: string
-        action:
-          type: string
-        resourceKind:
-          type: string
-        policyVersion:
-          type: string
-        filter:
-          type: object
-          properties:
-            kind:
-              type: string
-              enum:
-              - KIND_ALWAYS_ALLOWED
-              - KIND_ALWAYS_DENIED
-              - KIND_CONDITIONAL
-            condition:
-              type: object
-        cerbosCallId:
-          type: string
-    Principal:
-      type: object
-      required:
-      - id
-      - roles
-      properties:
-        id:
-          type: string
-        policyVersion:
-          type: string
-        scope:
-          type: string
-        roles:
-          type: array
-          items:
-            type: string
-        attr:
-          type: object
-          additionalProperties: true
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: object
     PlanResourcesRequest:
       type: object
       required:
@@ -134,6 +80,60 @@ components:
           type: object
         includeMeta:
           type: boolean
+    Principal:
+      type: object
+      required:
+      - id
+      - roles
+      properties:
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        attr:
+          type: object
+          additionalProperties: true
+    PlanResourcesResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+        action:
+          type: string
+        resourceKind:
+          type: string
+        policyVersion:
+          type: string
+        filter:
+          type: object
+          properties:
+            kind:
+              type: string
+              enum:
+              - KIND_ALWAYS_ALLOWED
+              - KIND_ALWAYS_DENIED
+              - KIND_CONDITIONAL
+            condition:
+              type: object
+        cerbosCallId:
+          type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
   responses:
     Error:
       description: Error response.

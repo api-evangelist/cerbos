@@ -49,56 +49,7 @@ paths:
         '400':
           $ref: '#/components/responses/Error'
 components:
-  responses:
-    Error:
-      description: Error response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    ResourceEntry:
-      type: object
-      required:
-      - actions
-      - resource
-      properties:
-        actions:
-          type: array
-          items:
-            type: string
-        resource:
-          $ref: '#/components/schemas/Resource'
-    Principal:
-      type: object
-      required:
-      - id
-      - roles
-      properties:
-        id:
-          type: string
-        policyVersion:
-          type: string
-        scope:
-          type: string
-        roles:
-          type: array
-          items:
-            type: string
-        attr:
-          type: object
-          additionalProperties: true
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: object
     Resource:
       type: object
       required:
@@ -116,24 +67,6 @@ components:
         attr:
           type: object
           additionalProperties: true
-    CheckResourcesRequest:
-      type: object
-      required:
-      - principal
-      - resources
-      properties:
-        requestId:
-          type: string
-        principal:
-          $ref: '#/components/schemas/Principal'
-        resources:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceEntry'
-        auxData:
-          type: object
-        includeMeta:
-          type: boolean
     CheckResourcesResponse:
       type: object
       properties:
@@ -169,6 +102,73 @@ components:
                   type: object
         cerbosCallId:
           type: string
+    Principal:
+      type: object
+      required:
+      - id
+      - roles
+      properties:
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        attr:
+          type: object
+          additionalProperties: true
+    CheckResourcesRequest:
+      type: object
+      required:
+      - principal
+      - resources
+      properties:
+        requestId:
+          type: string
+        principal:
+          $ref: '#/components/schemas/Principal'
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceEntry'
+        auxData:
+          type: object
+        includeMeta:
+          type: boolean
+    ResourceEntry:
+      type: object
+      required:
+      - actions
+      - resource
+      properties:
+        actions:
+          type: array
+          items:
+            type: string
+        resource:
+          $ref: '#/components/schemas/Resource'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+  responses:
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http
