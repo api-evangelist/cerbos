@@ -1,0 +1,51 @@
+slug: cerbos
+provider: Cerbos
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Check
+  spec_file: cerbos-check-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: POST /api/check/resources  checkResources  Check resources
+  reason: CheckResources evaluates whether a Principal may act on a Resource — the core access-decision
+    function of an authorization platform.
+- tag: Auth ZEN
+  spec_file: cerbos-auth-zen-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: POST /access/v1/evaluation  authzenEvaluation  AuthZEN single evaluation
+  reason: Standards-based access evaluation (AuthZEN) returning permit/deny decisions — runtime authorization,
+    i.e. Identity & Access Management.
+- tag: Admin Policies
+  spec_file: cerbos-admin-policies-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /admin/policy  adminAddOrUpdatePolicy  Add or update policies
+  reason: Lifecycle management of access-control policies (RBAC/ABAC/ReBAC) for an authorization platform
+    — access policy administration under Identity & Access Management, not corporate policy management.
+- tag: Plan
+  spec_file: cerbos-plan-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: POST /api/plan/resources  planResources  Plan resources  (PlanResourcesRequest, Principal)
+  reason: Derives the conditions under which a principal may access resources — an access-control query/decision
+    surface, mapping to Identity & Access Management.
