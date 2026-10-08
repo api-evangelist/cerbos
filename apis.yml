@@ -280,6 +280,12 @@ apis:
   - type: Reference
     url: https://docs.cerbos.dev/cerbos/latest/api/index#api-resources
 common:
+- type: Plans
+  url: plans/cerbos-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cerbos-rate-limits.yml
+- type: FinOps
+  url: finops/cerbos-finops.yml
 - type: CapabilityMap
   url: capabilities/cerbos-capability-edges.yml
   name: Cerbos Business Capability Map
