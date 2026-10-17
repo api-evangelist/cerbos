@@ -50,23 +50,6 @@ paths:
           $ref: '#/components/responses/Error'
 components:
   schemas:
-    Resource:
-      type: object
-      required:
-      - kind
-      - id
-      properties:
-        kind:
-          type: string
-        id:
-          type: string
-        policyVersion:
-          type: string
-        scope:
-          type: string
-        attr:
-          type: object
-          additionalProperties: true
     CheckResourcesResponse:
       type: object
       properties:
@@ -102,6 +85,24 @@ components:
                   type: object
         cerbosCallId:
           type: string
+    CheckResourcesRequest:
+      type: object
+      required:
+      - principal
+      - resources
+      properties:
+        requestId:
+          type: string
+        principal:
+          $ref: '#/components/schemas/Principal'
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceEntry'
+        auxData:
+          type: object
+        includeMeta:
+          type: boolean
     Principal:
       type: object
       required:
@@ -121,24 +122,6 @@ components:
         attr:
           type: object
           additionalProperties: true
-    CheckResourcesRequest:
-      type: object
-      required:
-      - principal
-      - resources
-      properties:
-        requestId:
-          type: string
-        principal:
-          $ref: '#/components/schemas/Principal'
-        resources:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceEntry'
-        auxData:
-          type: object
-        includeMeta:
-          type: boolean
     ResourceEntry:
       type: object
       required:
@@ -162,6 +145,23 @@ components:
           type: array
           items:
             type: object
+    Resource:
+      type: object
+      required:
+      - kind
+      - id
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        policyVersion:
+          type: string
+        scope:
+          type: string
+        attr:
+          type: object
+          additionalProperties: true
   responses:
     Error:
       description: Error response.
