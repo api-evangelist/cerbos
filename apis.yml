@@ -159,6 +159,10 @@ apis:
     GraphQL) into Cerbos authorization checks for ReBAC and ABAC scenarios.
   humanURL: https://www.cerbos.dev/products/synapse
   tags:
+  - Data Enrichment
+  - ReBAC
+  - Synapse
+  tags_raw:
   - Enrichment
   - ReBAC
   - Synapse
@@ -271,6 +275,8 @@ apis:
   humanURL: https://docs.cerbos.dev/cerbos/latest/api/index
   baseURL: localhost:3593
   tags:
+  - AuthZEN
+  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
