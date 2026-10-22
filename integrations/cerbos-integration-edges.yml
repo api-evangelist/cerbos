@@ -6,6 +6,7 @@ checked:
 - https://github.com/cncf/landscape
 - https://github.com/open-telemetry/opentelemetry.io/blob/main/data/ecosystem/vendors.yaml
 - https://github.com/open-telemetry/opentelemetry.io/blob/main/data/registry/
+- https://openid.net/foundation/sponsoring-members/
 marketplace_apps: []
 edges:
 - partner_name: OpenTelemetry
@@ -63,6 +64,32 @@ edges:
     detected: '2026-10-19'
   detected_by: sweep-cloud-native.py
   first_seen: '2026-10-15'
+- partner_name: OpenID Foundation
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://openid.net/foundation/sponsoring-members/
+  category: identity standards body membership
+  partner_tier: Corporate
+  contract_reference:
+    register: OpenID Foundation members (openid.net/foundation/sponsoring-members/)
+    standard: OpenID Foundation specifications (OpenID Connect, FAPI, CIBA, OpenID4VC, Shared Signals, AuthZEN)
+    spec_file: null
+    role: oidf-member
+    registered_name: Cerbos
+    register_id: https://www.cerbos.dev/
+    matched_domain: cerbos.dev
+    matched_by: domain
+    signal_note: 'participation only: corporate membership of the OpenID Foundation (level in partner_tier); the
+      logo links the member''s website (the link is the identity). Membership is not certification: OIDF certification
+      edges are written by sweep-identity.py and reused, not re-read'
+    detected_by: sweep-openid-certified-implementations.py
+    detected: '2026-10-22'
+  detected_by: sweep-openid-certified-implementations.py
+  first_seen: '2026-10-22'
 source:
 - https://github.com/open-telemetry/opentelemetry.io/blob/main/data/ecosystem/vendors.yaml
 - https://github.com/open-telemetry/opentelemetry.io/blob/main/data/registry/
