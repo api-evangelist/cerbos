@@ -1,4 +1,4 @@
-# Cerbos (cerbos)
+# Cerbos
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,188 +66,153 @@
 
 Cerbos is an open-core, language-agnostic, scalable authorization platform that decouples access control from application code by externalizing fine-grained, context-aware permission decisions into policy-as-code. Authorization is expressed in YAML policies supporting RBAC, ABAC, PBAC, and ReBAC, evaluated by a stateless Policy Decision Point (PDP) that delivers sub-millisecond decisions at scale. The platform consists of the open-source Cerbos PDP (Apache 2.0), Cerbos Hub control plane (PAP), Cerbos Synapse enrichment layer, and PEP SDKs for Go, Java, JavaScript / TypeScript, .NET, PHP, Python, Ruby, and Rust. The PDP exposes both REST (port 3592) and gRPC (port 3593) interfaces, an Admin API, and standards- compliant OpenID AuthZEN endpoints, with query-plan adapters for Prisma and SQLAlchemy.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cerbos/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cerbos/refs/heads/main/apis.yml)
+**Areas:** ABAC · Access Control · Authorization · AuthZEN · Open Source · PBAC · PDP · Permissions · Policy as Code · RBAC · ReBAC · Zero Trust
 
-## Scope
+## Cerbos on APIs.io
 
-- **Type:** Index
+Everything profiled for Cerbos is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cerbos/](https://apis.io/providers/cerbos/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- ABAC
-- Access Control
-- Authorization
-- AuthZEN
-- Open Source
-- PBAC
-- PDP
-- Permissions
-- Policy as Code
-- RBAC
-- ReBAC
-- Zero Trust
+- [Cerbos PDP gRPC API](https://apis.io/apis/cerbos/cerbos-pdp-grpc-api/) — The Cerbos PDP gRPC API exposes the cerbos.svc.v1.CerbosService and related management services on port 3593, with server reflection enabled. The gRPC…
+- [Cerbos AuthZEN API](https://apis.io/apis/cerbos/cerbos-authzen-api/) — Cerbos implements the OpenID AuthZEN authorization API specification, exposing standards-compliant single-evaluation, batch-evaluations, and well-known…
+- [Cerbos PDP Admin API](https://apis.io/apis/cerbos/cerbos-admin-api/) — The Cerbos Admin API provides management capabilities such as policy add/get/list, schema management, and audit log access on the running PDP. It is…
+- [Cerbos Hub API](https://apis.io/apis/cerbos/cerbos-hub-api/) — Cerbos Hub is the cloud-hosted Policy Administration Point (PAP) that manages policy authoring, versioning, validation, and distribution to Cerbos PDPs…
+- [Cerbos Synapse](https://apis.io/apis/cerbos/cerbos-synapse/) — Cerbos Synapse is the enrichment and orchestration component that fetches identity, resource, and relationship attributes from external systems and…
+- [Cerbos Admin Audit API](https://apis.io/apis/cerbos/cerbos-admin-audit-api/) — Audit and decision log access (Admin API).
+- [Cerbos Admin Policies API](https://apis.io/apis/cerbos/cerbos-admin-policies-api/) — Policy management (Admin API).
+- [Cerbos Admin Schemas API](https://apis.io/apis/cerbos/cerbos-admin-schemas-api/) — JSON schema management (Admin API).
+- [Cerbos Admin Store API](https://apis.io/apis/cerbos/cerbos-admin-store-api/) — Policy store administration (Admin API).
+- [Cerbos Check API](https://apis.io/apis/cerbos/cerbos-check-api/) — Evaluate authorization decisions.
+- [Cerbos Plan API](https://apis.io/apis/cerbos/cerbos-plan-api/) — Generate query plans for resource filtering.
+- [Cerbos Server API](https://apis.io/apis/cerbos/cerbos-server-api/) — PDP server metadata.
+- [Cerbos Auth ZEN API](https://apis.io/apis/cerbos/cerbos-auth-zen-api/) — OpenID AuthZEN standards-compliant evaluation endpoints.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-25
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### GraphQL (1)
 
-### Cerbos PDP REST API
+GraphQL schemas.
 
-The Cerbos PDP REST API is the HTTP/JSON interface for sending authorization requests to a running Cerbos Policy Decision Point. It exposes CheckResources for evaluating principal-against-resource decisions, PlanResources for translating policies into resource-filter query plans, and ServerInfo for runtime metadata. An OpenAPI / Swagger specification is served by every PDP instance.
+- [Moved to /providers/cerbos/](https://apis.io/graphqls/cerbos/cerbos-graphql/)
 
-- **Human URL:** [https://docs.cerbos.dev/cerbos/latest/api/index](https://docs.cerbos.dev/cerbos/latest/api/index)
-- **Base URL:** `http://localhost:3592`
+#### Agent skills (1)
 
-#### Tags
+Agent skills built on the API.
 
-- CheckResources
-- PDP
-- PlanResources
-- REST
+- [cerbos-policy](https://apis.io/agent-skills/cerbos/cerbos-policy/)
 
-#### Properties
+#### Agentic access (1)
 
-- [Documentation](https://docs.cerbos.dev/cerbos/latest/api/index)
-- [OpenAPI](https://docs.cerbos.dev/cerbos/latest/api/swagger.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Reference](https://docs.cerbos.dev/cerbos/latest/api/index#api-resources)
-- [Postman Collection](collections/cerbos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cerbos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Cerbos PDP gRPC API
+- [Cerbos Agentic Access](https://apis.io/agentic-access/cerbos/cerbos-agentic-access/)
 
-The Cerbos PDP gRPC API exposes the cerbos.svc.v1.CerbosService and related management services on port 3593, with server reflection enabled. The gRPC interface is the highest-performance way to embed Cerbos as a sidecar or in-process service for service-to-service authorization.
+#### Collections (9)
 
-- **Human URL:** [https://docs.cerbos.dev/cerbos/latest/api/index](https://docs.cerbos.dev/cerbos/latest/api/index)
-- **Base URL:** `localhost:3593`
+Postman and Open Collection request collections.
 
-#### Tags
+- [Cerbos PDP REST API](https://apis.io/collections/cerbos/open-cerbos/)
+- [Cerbos PDP REST Admin Audit API](https://apis.io/collections/cerbos/open-cerbos-admin-audit-api/)
+- [Cerbos PDP REST Admin Audit Admin Policies API](https://apis.io/collections/cerbos/open-cerbos-admin-policies-api/)
+- [Cerbos PDP REST Admin Audit Admin Schemas API](https://apis.io/collections/cerbos/open-cerbos-admin-schemas-api/)
+- [Cerbos PDP REST Admin Audit Admin Store API](https://apis.io/collections/cerbos/open-cerbos-admin-store-api/)
+- [Cerbos PDP REST Admin Audit AuthZEN API](https://apis.io/collections/cerbos/open-cerbos-authzen-api/)
+- [Cerbos PDP REST Admin Audit Check API](https://apis.io/collections/cerbos/open-cerbos-check-api/)
+- [Cerbos PDP REST Admin Audit Plan API](https://apis.io/collections/cerbos/open-cerbos-plan-api/)
+- [Cerbos PDP REST Admin Audit Server API](https://apis.io/collections/cerbos/open-cerbos-server-api/)
 
-- gRPC
-- PDP
-- Protocol Buffers
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://docs.cerbos.dev/cerbos/latest/api/index)
-- [Protocol](https://github.com/cerbos/cerbos/tree/main/api/genpb)
-- [Postman Collection](collections/cerbos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cerbos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cerbos Authentication](https://apis.io/security/cerbos/cerbos-authentication/)
+- [Cerbos Domain Security](https://apis.io/security/cerbos/cerbos-domain-security/)
 
-### Cerbos AuthZEN API
+#### Plans and pricing (1)
 
-Cerbos implements the OpenID AuthZEN authorization API specification, exposing standards-compliant single-evaluation, batch-evaluations, and well-known metadata endpoints so that any AuthZEN-conformant client or Policy Enforcement Point can integrate with Cerbos as the decision engine.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://docs.cerbos.dev/cerbos/latest/api/index](https://docs.cerbos.dev/cerbos/latest/api/index)
+- [Cerbos Plans Pricing](https://apis.io/plans/cerbos/cerbos-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- AuthZEN
-- OpenID
-- Standards
+Published request limits.
 
-#### Properties
+- [Cerbos Rate Limits](https://apis.io/rate-limits/cerbos/cerbos-rate-limits/)
 
-- [Documentation](https://docs.cerbos.dev/cerbos/latest/api/index#authzen)
-- [Specification](https://openid.net/specs/authorization-api-1_0.html)
-- [Discovery](https://docs.cerbos.dev/cerbos/latest/api/index#authzen)
-- [Postman Collection](collections/cerbos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cerbos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### Cerbos PDP Admin API
+What the API costs to run, by operation.
 
-The Cerbos Admin API provides management capabilities such as policy add/get/list, schema management, and audit log access on the running PDP. It is intended for administrative use and is gated by HTTP Basic Auth.
+- [Cerbos Finops](https://apis.io/finops/cerbos/cerbos-finops/)
 
-- **Human URL:** [https://docs.cerbos.dev/cerbos/latest/api/admin_api](https://docs.cerbos.dev/cerbos/latest/api/admin_api)
+## Where to find this API
 
-#### Tags
-
-- Admin
-- Audit Log
-- Policy Management
-
-#### Properties
-
-- [Documentation](https://docs.cerbos.dev/cerbos/latest/api/admin_api)
-- [Postman Collection](collections/cerbos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cerbos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cerbos Hub API
-
-Cerbos Hub is the cloud-hosted Policy Administration Point (PAP) that manages policy authoring, versioning, validation, and distribution to Cerbos PDPs across environments. It also provides decision logs, collaborative policy editing, and embedded PDP delivery.
-
-- **Human URL:** [https://docs.cerbos.dev/cerbos-hub/](https://docs.cerbos.dev/cerbos-hub/)
-
-#### Tags
-
-- Cloud
-- Hub
-- Policy Administration
-- Policy Distribution
-
-#### Properties
-
-- [Documentation](https://docs.cerbos.dev/cerbos-hub/)
-- [Console](https://hub.cerbos.cloud/)
-- [Postman Collection](collections/cerbos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cerbos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cerbos Synapse
-
-Cerbos Synapse is the enrichment and orchestration component that fetches identity, resource, and relationship attributes from external systems and translates infrastructure protocols (HTTP, gRPC, GraphQL) into Cerbos authorization checks for ReBAC and ABAC scenarios.
-
-- **Human URL:** [https://www.cerbos.dev/products/synapse](https://www.cerbos.dev/products/synapse)
-
-#### Tags
-
-- Enrichment
-- ReBAC
-- Synapse
-
-#### Properties
-
-- [Documentation](https://www.cerbos.dev/products/synapse)
-- [Postman Collection](collections/cerbos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cerbos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.cerbos.dev)
 - [Documentation](https://docs.cerbos.dev)
-- [Getting Started](https://docs.cerbos.dev/cerbos/latest/quickstart)
-- [A P I](https://docs.cerbos.dev/cerbos/latest/api/index)
-- [OpenAPI](https://docs.cerbos.dev/cerbos/latest/api/swagger.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Hub](https://hub.cerbos.cloud/)
-- [Git Hub](https://github.com/cerbos/cerbos)
-- [GitHub Organization](https://github.com/cerbos)
-- [Source Code](https://github.com/cerbos/cerbos)
-- [Issue Tracker](https://github.com/cerbos/cerbos/issues)
-- [Releases](https://github.com/cerbos/cerbos/releases)
-- [Blog](https://www.cerbos.dev/blog)
+- [Getting started](https://docs.cerbos.dev/cerbos/latest/quickstart)
 - [Pricing](https://www.cerbos.dev/pricing)
-- [Case Studies](https://www.cerbos.dev/case-studies)
-- [Customers](https://www.cerbos.dev/customers)
-- [Slack](https://join.slack.com/t/cerbos/shared_invite/zt-1a99bp8d6-fJiaY7lpDRRUe4UB1u35Yw)
-- [X (Twitter)](https://x.com/CerbosDev)
-- [LinkedIn](https://www.linkedin.com/company/cerbos)
-- [YouTube](https://www.youtube.com/@cerbos)
-- [License](https://github.com/cerbos/cerbos/blob/main/LICENSE)
-- [Security Policy](https://www.cerbos.dev/security)
-- [Terms of Service](https://www.cerbos.dev/terms)
-- [Privacy Policy](https://www.cerbos.dev/privacy)
-- [Playground](https://play.cerbos.dev)
-- [Docker Hub](https://hub.docker.com/r/cerbos/cerbos)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [S D Ks](undefined)
-- [Integrations](https://www.cerbos.dev/ecosystem)
-- [Agent Skill](https://github.com/cerbos/skills)
-- [L L Ms Txt](https://docs.cerbos.dev/llms.txt)
+- [Blog](https://www.cerbos.dev/blog)
+- [Terms of service](https://www.cerbos.dev/terms)
+- [Privacy policy](https://www.cerbos.dev/privacy)
+- [GitHub](https://github.com/cerbos)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 42.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 42.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 68.3 |
+| Access clarity | 18.4 |
+
+**Agent readiness 22.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | unknown |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cerbos/](https://apis.io/providers/cerbos/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cerbos: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cerbos/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
